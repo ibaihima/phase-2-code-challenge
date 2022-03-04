@@ -21,6 +21,7 @@ function BotsPage() {
     setMyList([...myList, whatsClicked])
   }
 
+
   const deleteWhenClicked = (whatsClicked) => {
     const find = myList.findIndex((robot) => robot.id === whatsClicked.id)
     const newArray = [...myList]
@@ -31,14 +32,13 @@ function BotsPage() {
   const onRobotDelete = (whatsClicked)=>{
     const find = myList.findIndex((robot) => robot.id === whatsClicked.id)
     const myArray = [...myList]
-    myArray.splice(find, 1)
-    setMyList(myArray)
-
     const finds = botCollection.findIndex((robot) => robot.id === whatsClicked.id)
     const mainArray = [...botCollection]
+    myArray.splice(find, 1)  
     mainArray.splice(finds, 1)
-    setBotCollection(mainArray)
-    
+    setMyList(myArray)
+    setBotCollection(mainArray)  
+
   }
 
 
